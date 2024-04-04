@@ -38,5 +38,5 @@ if (age % 2 == 0 ){
     console.log("Your age is an even number.");
 }
 else{
-    console.log("Your age is an odd number.")
+    console.log("Your age is an odd number.");
 }
