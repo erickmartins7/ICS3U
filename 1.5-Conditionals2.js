@@ -27,7 +27,7 @@ if (selection == 1) {
     console.log("Invalid selection.")
 }
 
-let time = parseInt(prompt("Enter an hour between 0 and 23 without the minutes "));
+let time = parseInt(prompt("Enter an hour between 0 and 23 without the minutes: "));
 
 if ((time >= 0) && (time <=11)){
     console.log("Good morning!");
@@ -45,7 +45,7 @@ else{
 
 let random_number = Math.random() * 10;    
 random_number = Math.floor(random_number);  
-
+console.log("Randomly generated value: " + random_number)
 if (random_number == 0){
     console.log("The value is zero.")
 }
@@ -55,13 +55,6 @@ if (random_number % 2 == 0){
 if ((random_number % 2 == 0) && (random_number % 3 == 0)){
     console.log("The value is divisible by two and three.")
 }
-function prime(num){
-    if (num == 2); return true;// The keyword return signals an exit of the function when if finds a true statement.
-    if (num <= 1) return false;
-        for (let i = 2; i < num; i++){ // ++ means increment by one
-    if (num % i == 0) {
-        return false;
-    }
-}
-return true;
+if (random_number == 2 || random_number == 3 || random_number == 5 || random_number == 7){
+    console.log("The value is prime.")
 }
