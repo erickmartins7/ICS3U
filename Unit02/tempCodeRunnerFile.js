@@ -1,0 +1,1 @@
+let num1 = parseFloat(prompt("Enter the first number: "));
