@@ -2,7 +2,7 @@
 const prompt = require('prompt-sync')(); 
 
 function print_line(){
-    function emoji_printer(){
+    function emoji_printer(){ //This is a function within the function that allows the user to choose an emoji
     console.log("Choose your emoji:  1) 😀  2) 😥  3) 😲  4) 😎  5) 😠");
     let emoji_selection = Number(prompt("Enter the number of the emoji that you want: "));
     let input_emoji = "";
@@ -28,11 +28,9 @@ function print_line(){
     if (input < 0){
         return
     }
-    let count = 0
     let start = " "
-    while (count < input){
+    for (let i = 0; i < input; i++){ // This for loop has a string that is blank and adds an emoji each time the loop completes.
         start += input_emoji
-        count ++
     }
     console.log(start)
 }
@@ -69,11 +67,11 @@ function print_square(){
         return
     }
     let print = "";
-        for (let i = 0; i < input; i++){
-            for (let x = 0; x < input; x++) {
+        for (let i = 0; i < input; i++){ // This for loop tells how many times to print the rows.
+            for (let x = 0; x < input; x++) { // This for loop prints each row
                     print += input_emoji
             }
-            print += "\n";
+            print += "\n"; // Prints each row on a new line.
     }
     console.log(print);
 }
@@ -126,9 +124,9 @@ function print_outline(){{}
         return
     }
     let square = "";
-    for (let i = 0; i < size; i++) {
+    for (let i = 0; i < size; i++) { 
         for (let j = 0; j < size; j++) {
-            if (i === 0 || i === size - 1 || j === 0 || j === size - 1) {
+            if (i === 0 || i === size - 1 || j === 0 || j === size - 1) { // If the current position is on th eedge of the square, it adds the outline emoji. Otherwise, it adds the middle emoji.
                 square += outlineEmoji + " ";
             } else {
                 square += middleEmoji + " ";
@@ -141,3 +139,21 @@ function print_outline(){{}
 }
 print_outline()
 
+
+function print_diamond() {
+    let mid = Number(prompt("How many emojis in the middle row of the diamond? ")); // The middle row of the diamond
+    let emoji = "⚽";
+    let space = " ";
+
+    for (let i = 0; i < mid; i++) {
+        let space_num = mid - i - 1; // This is the number of spaces that should be printed before the emoji.
+        let emoji_num = i + 1; // This tells how many emojis to print. 
+        console.log(space.repeat(space_num) + emoji.repeat(emoji_num)); // .repeat is a function that I learned about from W3Schools. It returns a string with a number of copies of a string.
+    }
+    for (let i = mid - 1; i > 0; i--) { // To print the bottom of the diamond, the for loop is decreasing.
+        let space_num = mid - i; 
+        let emoji_num = i; 
+        console.log(space.repeat(space_num) + emoji.repeat(emoji_num));
+    }
+}
+print_diamond();

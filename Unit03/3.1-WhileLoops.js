@@ -16,9 +16,9 @@ function countdown(start, stop){
         start--;
         count++;
     }
-    console.log(count)
+    return(count) // This returns the number of time the while loop looped.
 } 
-countdown(10, 0)
+console.log(countdown(10, 0)) // console.log allows you to the see return value.
 
 //task 2 
 
